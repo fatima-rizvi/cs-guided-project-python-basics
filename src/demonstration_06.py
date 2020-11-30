@@ -15,6 +15,32 @@ Examples:
 - XO("zpzpzpp") ➞ True (Returns True if no x and o)
 - XO("zzoo") ➞ False
 """
+#Steps
+#Split up the string into individual letters
+#Iterate through every letter in the string
+#Count the x's and o's
+#Return true or false based on the conditions
+
 def XO(txt):
-    # Your code here
+    x = 0
+    o = 0
+    chars = list(txt)
+    for char in chars:
+        if char.lower() == "x":
+            x += 1
+        elif char.lower() == "o":
+            o += 1
+    
+    if x == o :
+        return True
+    elif x == 0 and o == 0:
+        return True
+    else:
+        return False
+
+print(XO("ooxx")) # True
+print(XO("xooxx")) # False
+print(XO("ooxXm")) # True (Case insensitive)
+print(XO("zpzpzpp")) # True (Returns True if no x and o)
+print(XO("zzoo")) # False
 

@@ -9,7 +9,7 @@ Examples:
 - convert(2) ➞ 120
 """
 def convert(minutes):
-    return minutes * 60
+    return int(minutes) * 60
 
 print(convert(5)) # 300
 print(convert(3)) # 180

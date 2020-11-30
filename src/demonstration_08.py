@@ -10,6 +10,11 @@ Examples:
 - num_args(True, False) ➞ 2
 - num_args({}) ➞ 1
 """
-def num_args():
-    # Your code here
+def num_args(*args):
+    return len(args)
 
+print(num_args()) # 0
+print(num_args("foo")) # 1
+print(num_args("foo", "bar")) # 2
+print(num_args(True, False)) # 2
+print(num_args({})) # 1

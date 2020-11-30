@@ -13,11 +13,19 @@ Notes:
 "75%" to 12 would be 9 as opposed to taking off 75% (making 3)).
 - There won't be any awkward decimal numbers, only 0.5 to deal with.
 """
+
 def get_discounts(prices, discount):
     discount = discount.split("%")
     discount = "." + discount[0]
     discount = float(discount)
-    return [price * discount for price in prices]
+    discounted = [price * discount for price in prices]
+    result = []
+    for price in discounted:
+        if ".0" in str(price):
+            result.append(int(price))
+        else:
+            result.append(price)
+    return result
 
 print(get_discounts([2, 4, 6, 11], "50%")) # [1, 2, 3, 5.5]
 print(get_discounts([10, 20, 40, 80], "75%")) # [7.5, 15, 30, 60]
